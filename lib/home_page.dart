@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      context.push('BlocExample');
+                      context.push('/BlocExample');
                     },
                     child: const Card(
                       shape: ContinuousRectangleBorder(

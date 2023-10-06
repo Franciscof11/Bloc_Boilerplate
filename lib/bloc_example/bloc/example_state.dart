@@ -5,7 +5,7 @@ abstract class ExampleState {}
 class ExampleInitialState extends ExampleState {}
 
 class ExampleStateData extends ExampleState {
-  final List<List> name;
+  final List<String> name;
 
   ExampleStateData({
     required this.name,

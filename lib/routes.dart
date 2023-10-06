@@ -15,7 +15,7 @@ final routes = GoRouter(
     GoRoute(
       path: '/BlocExample',
       builder: (context, state) => BlocProvider(
-        create: (context) => ExampleBloc(),
+        create: (context) => ExampleBloc()..add(ExampleFindNameEvent()),
         child: const BlocExample(),
       ),
     ),
