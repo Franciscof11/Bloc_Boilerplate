@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -19,7 +20,9 @@ class HomePage extends StatelessWidget {
                 ),
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.push('BlocExample');
+                    },
                     child: const Card(
                       shape: ContinuousRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30))),
