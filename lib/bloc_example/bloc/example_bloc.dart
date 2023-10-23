@@ -8,6 +8,7 @@ part 'example_state.dart';
 class ExampleBloc extends Bloc<ExampleEvent, ExampleState> {
   ExampleBloc() : super(ExampleInitialState()) {
     on<ExampleFindNameEvent>(findNames);
+    on<ExampleAddNameEvent>(addName);
     on<ExampleRemoveNameEvent>(removeName);
   }
 
@@ -22,6 +23,23 @@ class ExampleBloc extends Bloc<ExampleEvent, ExampleState> {
     emit(
       ExampleStateData(names: names),
     );
+  }
+
+  FutureOr<void> addName(
+    ExampleAddNameEvent event,
+    Emitter<ExampleState> emit,
+  ) {
+    final exampleState = state;
+
+    if (exampleState is ExampleStateData) {
+      // Recupera lista de nomes do estado
+      final nameList = exampleState.names;
+
+      // Adiciona nome na lista
+      nameList.add(event.name);
+
+      emit(ExampleStateData(names: nameList));
+    }
   }
 
   FutureOr<void> removeName(

@@ -14,6 +14,14 @@ class _BlocExampleState extends State<BlocExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {
+          context
+              .read<ExampleBloc>()
+              .add(ExampleAddNameEvent(name: 'Eduardo Caldas'));
+        },
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
