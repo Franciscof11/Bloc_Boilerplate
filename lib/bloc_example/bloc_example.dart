@@ -21,7 +21,7 @@ class _BlocExampleState extends State<BlocExample> {
             listenWhen: (previous, current) {
               if (previous is ExampleInitialState &&
                   current is ExampleStateData &&
-                  current.name.length > 2) {
+                  current.names.length > 2) {
                 return true;
               }
               return false;
@@ -29,13 +29,13 @@ class _BlocExampleState extends State<BlocExample> {
             buildWhen: (previous, current) {
               if (previous is ExampleInitialState &&
                   current is ExampleStateData &&
-                  current.name.length > 2) {
+                  current.names.length > 2) {
                 return true;
               }
               return false;
             },
             listener: (context, state) {
-              if (state is ExampleStateData && state.name.isNotEmpty) {
+              if (state is ExampleStateData && state.names.isNotEmpty) {
                 showDialog(
                     context: context,
                     builder: (context) {
@@ -48,7 +48,7 @@ class _BlocExampleState extends State<BlocExample> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('${state.name.length} nomes carregados!',
+                              Text('${state.names.length} nomes carregados!',
                                   style: const TextStyle(fontSize: 30)),
                             ],
                           ),
@@ -58,16 +58,26 @@ class _BlocExampleState extends State<BlocExample> {
               }
             },
             builder: (context, state) {
-              if (state is ExampleStateData && state.name.isEmpty) {
+              if (state is ExampleStateData && state.names.isEmpty) {
                 return const Center(child: Text('Nada encontrado!'));
               }
 
-              if (state is ExampleStateData && state.name.isNotEmpty) {
+              if (state is ExampleStateData && state.names.isNotEmpty) {
                 return ListView.builder(
                   shrinkWrap: true,
-                  itemCount: state.name.length,
-                  itemBuilder: (context, index) =>
-                      Center(child: Text(state.name[index])),
+                  itemCount: state.names.length,
+                  itemBuilder: (context, index) => Center(
+                    child: GestureDetector(
+                      onTap: () {
+                        context.read<ExampleBloc>().add(
+                              ExampleRemoveNameEvent(name: state.names[index]),
+                            );
+                      },
+                      child: Text(
+                        state.names[index],
+                      ),
+                    ),
+                  ),
                 );
               }
               return const SizedBox.shrink();
