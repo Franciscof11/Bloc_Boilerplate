@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import 'bloc_example/bloc_example.dart';
+import 'freezed_example/bloc/freezed_bloc.dart';
+import 'freezed_example/freezed_example.dart';
 
 final routes = GoRouter(
   initialLocation: '/HomePage',
@@ -17,6 +19,13 @@ final routes = GoRouter(
       builder: (context, state) => BlocProvider(
         create: (context) => ExampleBloc()..add(ExampleFindNameEvent()),
         child: const BlocExample(),
+      ),
+    ),
+    GoRoute(
+      path: '/ExampleFreezed',
+      builder: (context, state) => BlocProvider(
+        create: (context) => FreezedBloc()..add(FreezedEvent.findNames()),
+        child: const FreezedExample(),
       ),
     ),
   ],

@@ -32,7 +32,9 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.push('/ExampleFreezed');
+                    },
                     child: const Card(
                       shape: ContinuousRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30))),
