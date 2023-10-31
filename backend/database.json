@@ -3,21 +3,17 @@
         {
             "id": 0,
             "name": "Rodrigo Rahman",
-            "email": "rodrigorahman@academiadoflutter.com.br",
-            "password": "123"
+            "email": "rodrigorahman@academiadoflutter.com.br"
         },
         {
             "id": 1,
             "name": "Francisco Santos",
-            "email": "chicosantos@gmail.com",
-            "password": "1234"
+            "email": "chicosantos@gmail.com"
         },
         {
             "id": 2,
             "name": "Tayssa Lopes",
-            "email": "tayssalopes@gmail.com",
-            "password": "123",
-            "profile": "ADMIN"
+            "email": "tayssalopes@gmail.com"
         }
     ]
 }

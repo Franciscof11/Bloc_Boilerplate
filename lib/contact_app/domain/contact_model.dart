@@ -1,11 +1,10 @@
 import 'dart:convert';
 
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-class Contact {
+class ContactModel {
   final String? id;
   final String name;
   final String email;
-  Contact({
+  ContactModel({
     this.id,
     required this.name,
     required this.email,
@@ -19,8 +18,8 @@ class Contact {
     };
   }
 
-  factory Contact.fromMap(Map<String, dynamic> map) {
-    return Contact(
+  factory ContactModel.fromMap(Map<String, dynamic> map) {
+    return ContactModel(
       id: map['id'] != null ? map['id'] as String : null,
       name: map['name'] as String,
       email: map['email'] as String,
@@ -29,6 +28,6 @@ class Contact {
 
   String toJson() => json.encode(toMap());
 
-  factory Contact.fromJson(String source) =>
-      Contact.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory ContactModel.fromJson(String source) =>
+      ContactModel.fromMap(json.decode(source) as Map<String, dynamic>);
 }
