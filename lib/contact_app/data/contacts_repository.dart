@@ -5,9 +5,11 @@ class ContactRepository {
   Future<List<ContactModel>> getAllContacts() async {
     final response = await Dio().get('http://10.0.2.2:8080/contacts');
 
-    return response.data
+    final contacts = response.data
         ?.map<ContactModel>((contact) => ContactModel.fromMap(contact))
         .toList();
+
+    return contacts;
   }
 
   Future<void> createContact(ContactModel contact) {

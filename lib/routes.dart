@@ -1,4 +1,6 @@
 import 'package:bloc_boilerplate/bloc_example/bloc/example_bloc.dart';
+import 'package:bloc_boilerplate/contact_app/data/contacts_repository.dart';
+import 'package:bloc_boilerplate/contact_app/presentation/bloc/contact_list_bloc.dart';
 import 'package:bloc_boilerplate/home_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -31,7 +33,12 @@ final routes = GoRouter(
     ),
     GoRoute(
       path: '/ListPage',
-      builder: (context, state) => const ListPage(),
+      builder: (context, state) => BlocProvider(
+        create: (context) =>
+            ContactListBloc(repository: context.read<ContactRepository>())
+              ..add(ContactListEvent.getAll()),
+        child: const ListPage(),
+      ),
     ),
   ],
 );

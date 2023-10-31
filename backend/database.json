@@ -1,17 +1,17 @@
 {
     "contacts": [
         {
-            "id": 0,
+            "id": "0",
             "name": "Rodrigo Rahman",
             "email": "rodrigorahman@academiadoflutter.com.br"
         },
         {
-            "id": 1,
+            "id": "1",
             "name": "Francisco Santos",
             "email": "chicosantos@gmail.com"
         },
         {
-            "id": 2,
+            "id": "2",
             "name": "Tayssa Lopes",
             "email": "tayssalopes@gmail.com"
         }
