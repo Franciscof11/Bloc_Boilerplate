@@ -27,7 +27,6 @@ class ContactListBloc extends Bloc<ContactListEvent, ContactListState> {
 
       emit(ContactListState.data(contacts: contacts));
     } catch (e) {
-      print('erro ao buscar contatos');
       emit(ContactListState.error(message: 'Erro ao buscar contatos!'));
     }
   }
