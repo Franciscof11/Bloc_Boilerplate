@@ -9,4 +9,6 @@ class ContactListState with _$ContactListState {
 
   factory ContactListState.error({required String message}) =
       _ContactListErrorState;
+
+  factory ContactListState.loading() = _Loading;
 }

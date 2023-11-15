@@ -171,6 +171,7 @@ mixin _$ContactListState {
     required TResult Function() initial,
     required TResult Function(List<ContactModel> contacts) data,
     required TResult Function(String message) error,
+    required TResult Function() loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -178,6 +179,7 @@ mixin _$ContactListState {
     TResult? Function()? initial,
     TResult? Function(List<ContactModel> contacts)? data,
     TResult? Function(String message)? error,
+    TResult? Function()? loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -185,6 +187,7 @@ mixin _$ContactListState {
     TResult Function()? initial,
     TResult Function(List<ContactModel> contacts)? data,
     TResult Function(String message)? error,
+    TResult Function()? loading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -193,6 +196,7 @@ mixin _$ContactListState {
     required TResult Function(_ContactListInitialState value) initial,
     required TResult Function(_ContactListStateData value) data,
     required TResult Function(_ContactListErrorState value) error,
+    required TResult Function(_Loading value) loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -200,6 +204,7 @@ mixin _$ContactListState {
     TResult? Function(_ContactListInitialState value)? initial,
     TResult? Function(_ContactListStateData value)? data,
     TResult? Function(_ContactListErrorState value)? error,
+    TResult? Function(_Loading value)? loading,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -207,6 +212,7 @@ mixin _$ContactListState {
     TResult Function(_ContactListInitialState value)? initial,
     TResult Function(_ContactListStateData value)? data,
     TResult Function(_ContactListErrorState value)? error,
+    TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -274,6 +280,7 @@ class _$ContactListInitialStateImpl implements _ContactListInitialState {
     required TResult Function() initial,
     required TResult Function(List<ContactModel> contacts) data,
     required TResult Function(String message) error,
+    required TResult Function() loading,
   }) {
     return initial();
   }
@@ -284,6 +291,7 @@ class _$ContactListInitialStateImpl implements _ContactListInitialState {
     TResult? Function()? initial,
     TResult? Function(List<ContactModel> contacts)? data,
     TResult? Function(String message)? error,
+    TResult? Function()? loading,
   }) {
     return initial?.call();
   }
@@ -294,6 +302,7 @@ class _$ContactListInitialStateImpl implements _ContactListInitialState {
     TResult Function()? initial,
     TResult Function(List<ContactModel> contacts)? data,
     TResult Function(String message)? error,
+    TResult Function()? loading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -308,6 +317,7 @@ class _$ContactListInitialStateImpl implements _ContactListInitialState {
     required TResult Function(_ContactListInitialState value) initial,
     required TResult Function(_ContactListStateData value) data,
     required TResult Function(_ContactListErrorState value) error,
+    required TResult Function(_Loading value) loading,
   }) {
     return initial(this);
   }
@@ -318,6 +328,7 @@ class _$ContactListInitialStateImpl implements _ContactListInitialState {
     TResult? Function(_ContactListInitialState value)? initial,
     TResult? Function(_ContactListStateData value)? data,
     TResult? Function(_ContactListErrorState value)? error,
+    TResult? Function(_Loading value)? loading,
   }) {
     return initial?.call(this);
   }
@@ -328,6 +339,7 @@ class _$ContactListInitialStateImpl implements _ContactListInitialState {
     TResult Function(_ContactListInitialState value)? initial,
     TResult Function(_ContactListStateData value)? data,
     TResult Function(_ContactListErrorState value)? error,
+    TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -417,6 +429,7 @@ class _$ContactListStateDataImpl implements _ContactListStateData {
     required TResult Function() initial,
     required TResult Function(List<ContactModel> contacts) data,
     required TResult Function(String message) error,
+    required TResult Function() loading,
   }) {
     return data(contacts);
   }
@@ -427,6 +440,7 @@ class _$ContactListStateDataImpl implements _ContactListStateData {
     TResult? Function()? initial,
     TResult? Function(List<ContactModel> contacts)? data,
     TResult? Function(String message)? error,
+    TResult? Function()? loading,
   }) {
     return data?.call(contacts);
   }
@@ -437,6 +451,7 @@ class _$ContactListStateDataImpl implements _ContactListStateData {
     TResult Function()? initial,
     TResult Function(List<ContactModel> contacts)? data,
     TResult Function(String message)? error,
+    TResult Function()? loading,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -451,6 +466,7 @@ class _$ContactListStateDataImpl implements _ContactListStateData {
     required TResult Function(_ContactListInitialState value) initial,
     required TResult Function(_ContactListStateData value) data,
     required TResult Function(_ContactListErrorState value) error,
+    required TResult Function(_Loading value) loading,
   }) {
     return data(this);
   }
@@ -461,6 +477,7 @@ class _$ContactListStateDataImpl implements _ContactListStateData {
     TResult? Function(_ContactListInitialState value)? initial,
     TResult? Function(_ContactListStateData value)? data,
     TResult? Function(_ContactListErrorState value)? error,
+    TResult? Function(_Loading value)? loading,
   }) {
     return data?.call(this);
   }
@@ -471,6 +488,7 @@ class _$ContactListStateDataImpl implements _ContactListStateData {
     TResult Function(_ContactListInitialState value)? initial,
     TResult Function(_ContactListStateData value)? data,
     TResult Function(_ContactListErrorState value)? error,
+    TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -559,6 +577,7 @@ class _$ContactListErrorStateImpl implements _ContactListErrorState {
     required TResult Function() initial,
     required TResult Function(List<ContactModel> contacts) data,
     required TResult Function(String message) error,
+    required TResult Function() loading,
   }) {
     return error(message);
   }
@@ -569,6 +588,7 @@ class _$ContactListErrorStateImpl implements _ContactListErrorState {
     TResult? Function()? initial,
     TResult? Function(List<ContactModel> contacts)? data,
     TResult? Function(String message)? error,
+    TResult? Function()? loading,
   }) {
     return error?.call(message);
   }
@@ -579,6 +599,7 @@ class _$ContactListErrorStateImpl implements _ContactListErrorState {
     TResult Function()? initial,
     TResult Function(List<ContactModel> contacts)? data,
     TResult Function(String message)? error,
+    TResult Function()? loading,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -593,6 +614,7 @@ class _$ContactListErrorStateImpl implements _ContactListErrorState {
     required TResult Function(_ContactListInitialState value) initial,
     required TResult Function(_ContactListStateData value) data,
     required TResult Function(_ContactListErrorState value) error,
+    required TResult Function(_Loading value) loading,
   }) {
     return error(this);
   }
@@ -603,6 +625,7 @@ class _$ContactListErrorStateImpl implements _ContactListErrorState {
     TResult? Function(_ContactListInitialState value)? initial,
     TResult? Function(_ContactListStateData value)? data,
     TResult? Function(_ContactListErrorState value)? error,
+    TResult? Function(_Loading value)? loading,
   }) {
     return error?.call(this);
   }
@@ -613,6 +636,7 @@ class _$ContactListErrorStateImpl implements _ContactListErrorState {
     TResult Function(_ContactListInitialState value)? initial,
     TResult Function(_ContactListStateData value)? data,
     TResult Function(_ContactListErrorState value)? error,
+    TResult Function(_Loading value)? loading,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -630,4 +654,118 @@ abstract class _ContactListErrorState implements ContactListState {
   @JsonKey(ignore: true)
   _$$ContactListErrorStateImplCopyWith<_$ContactListErrorStateImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$ContactListStateCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingImpl implements _Loading {
+  _$LoadingImpl();
+
+  @override
+  String toString() {
+    return 'ContactListState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(List<ContactModel> contacts) data,
+    required TResult Function(String message) error,
+    required TResult Function() loading,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(List<ContactModel> contacts)? data,
+    TResult? Function(String message)? error,
+    TResult? Function()? loading,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<ContactModel> contacts)? data,
+    TResult Function(String message)? error,
+    TResult Function()? loading,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ContactListInitialState value) initial,
+    required TResult Function(_ContactListStateData value) data,
+    required TResult Function(_ContactListErrorState value) error,
+    required TResult Function(_Loading value) loading,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ContactListInitialState value)? initial,
+    TResult? Function(_ContactListStateData value)? data,
+    TResult? Function(_ContactListErrorState value)? error,
+    TResult? Function(_Loading value)? loading,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ContactListInitialState value)? initial,
+    TResult Function(_ContactListStateData value)? data,
+    TResult Function(_ContactListErrorState value)? error,
+    TResult Function(_Loading value)? loading,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Loading implements ContactListState {
+  factory _Loading() = _$LoadingImpl;
 }

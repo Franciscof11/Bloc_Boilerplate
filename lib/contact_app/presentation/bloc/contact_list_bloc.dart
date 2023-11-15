@@ -22,8 +22,11 @@ class ContactListBloc extends Bloc<ContactListEvent, ContactListState> {
     Emitter<ContactListState> emit,
   ) async {
     try {
+      emit(ContactListState.loading());
+
       final contacts = await _repository.getAllContacts();
-      await Future.delayed(const Duration(seconds: 2));
+
+/*       await Future.delayed(const Duration(seconds: 2)); */
 
       emit(ContactListState.data(contacts: contacts));
     } catch (e) {
