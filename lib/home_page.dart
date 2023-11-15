@@ -56,7 +56,9 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.push('/ContactCubitPage');
+                    },
                     child: const Card(
                       shape: ContinuousRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30))),
